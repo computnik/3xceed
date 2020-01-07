@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "3xceed",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "website for 3xceed.com",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Aayush Singla <aayushsingla.bits@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.10.1",
     "bootstrap": "^4.3.1",
