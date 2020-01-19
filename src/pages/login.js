@@ -16,8 +16,10 @@ class LoginPage extends Component {
       username: '3xceed',
       password: 'TiAaJa',
       error: 'Error occured',
+      showLogin: true
     };
 
+    this.toggleSignRegisterPanels = this.toggleSignRegisterPanels.bind(this);
     this.handlePassChange = this.handlePassChange.bind(this);
     this.handleUserChange = this.handleUserChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,14 +61,17 @@ class LoginPage extends Component {
     });
   }
 
+  toggleSignRegisterPanels() {
+    const showLogin = !this.state.showLogin
+    this.setState({ showLogin });
+  }
   signUpClick() {
-    const container = document.getElementById('containerID');
-    container.classList.add("right-panel-active");
+    // this.setState({showLogin:false});
+
   }
 
   signInClick() {
-    const container = document.getElementById('containerID');
-    container.classList.remove("right-panel-active");
+    // this.setState({showLogin:false});
   }
 
   loginClick() {
@@ -77,12 +82,10 @@ class LoginPage extends Component {
     // NOTE: I use data-attributes for easier E2E testing
     // but you don't need to target those (any css-selector will work)
 
+    const containerClasses = this.state.showLogin ? "containerF" : "containerF right-panel-active";
 
     return (
-      <div className="containerF" id="containerID">
-
-
-
+      <div className={containerClasses} id="containerID">
         <div className="form-container sign-up-container">
           <form className="LoginForm" action="#">
             <h1 className="loginH1">Create Account</h1>
@@ -117,12 +120,12 @@ class LoginPage extends Component {
               <h1 className="loginH1">Welcome Back!</h1>
               <p className="loginP">To keep connected with us please login with your personal
     					info</p>
-              <button className="loginB ghostB" id="signIn" onClick={this.signInClick}>Sign In</button>
+              <button className="loginB ghostB" id="signIn" onClick={this.toggleSignRegisterPanels}>Sign In</button>
             </div>
             <div className="overlay-panel overlay-right">
               <h1 className="loginH1">Hello, Friend!</h1>
               <p className="loginP">Enter your personal details and start journey with us</p>
-              <button className="loginB ghostB" id="signUp" onClick={this.signUpClick}>Sign Up</button>
+              <button className="loginB ghostB" id="signUp" onClick={this.toggleSignRegisterPanels}>Sign Up</button>
             </div>
           </div>
         </div>
