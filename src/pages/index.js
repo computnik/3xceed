@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import Scroller from "../components/scroller"
 import PortfolioModal from "../components/portfolio/modal"
 import PortfolioCarousel from "../components/portfolio/carousel"
+//import LoginPage from "login"
 
 export default class IndexPage extends React.Component {
   constructor(props) {

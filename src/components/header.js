@@ -2,6 +2,7 @@ import React from "react"
 import Scrollspy from "react-scrollspy"
 import { Navbar, Nav } from "react-bootstrap"
 import Scroller from './scroller'
+import Link from 'gatsby-link'
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -33,6 +34,10 @@ export default class Header extends React.Component {
                   </li>
                   <li className="nav-item">
                     <Nav.Link className={"js-scroll-trigger"} href="#contact" onClick={Scroller.handleAnchorScroll}>Contact</Nav.Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/login">Login</Link>
+
                   </li>
                 </Scrollspy>
               </Nav>
